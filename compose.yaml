@@ -1,0 +1,7 @@
+﻿services:
+  messenger.api:
+    image: messenger.api
+    build:
+      context: .
+      dockerfile: Messenger.API/Dockerfile
+
