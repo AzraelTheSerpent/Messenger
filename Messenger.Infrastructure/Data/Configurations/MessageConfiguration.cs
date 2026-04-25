@@ -19,11 +19,9 @@ public class MessageConfiguration : IEntityTypeConfiguration<Message>
             .HasDefaultValueSql("CURRENT_TIMESTAMP")
             .HasColumnType("timestamp with time zone");
 
-        // Индекс для истории чата
         builder.HasIndex(m => new { m.ChatId, m.CreatedAt })
             .HasDatabaseName("chat_history_ix");
 
-        // Отправитель может быть удален (SetNull)
         builder.HasOne(m => m.Sender)
             .WithMany(u => u.Messages)
             .HasForeignKey(m => m.SenderId)
