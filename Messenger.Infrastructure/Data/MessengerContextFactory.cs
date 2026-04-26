@@ -13,7 +13,7 @@ public class MessengerContextFactory : IDesignTimeDbContextFactory<MessengerDbCo
             .AddJsonFile("appsettings.json")
             .Build();
         var optionsBuilder = new DbContextOptionsBuilder<MessengerDbContext>();
-        optionsBuilder.UseNpgsql(configuration.GetConnectionString("Database"));
+        optionsBuilder.UseNpgsql(configuration.GetConnectionString("Migration"));
         return new(optionsBuilder.Options);
     }
 }
