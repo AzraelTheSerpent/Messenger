@@ -22,4 +22,8 @@
       <Folder Include="Controllers\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Messenger.Infrastructure\Messenger.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>
