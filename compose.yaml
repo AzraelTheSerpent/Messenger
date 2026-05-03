@@ -2,7 +2,7 @@
   messenger.api:
     image: messenger.api
     build:
-      context: .
+      context: ./Backend
       dockerfile: Messenger.API/Dockerfile
     networks:
       - net
