@@ -2,8 +2,8 @@
   <Folder Name="/Solution Items/">
     <File Path="compose.yaml" />
   </Folder>
-  <Project Path="Messenger.API/Messenger.API.csproj" />
-  <Project Path="Messenger.Application/Messenger.Application.csproj" />
-  <Project Path="Messenger.Domain/Messenger.Domain.csproj" />
-  <Project Path="Messenger.Infrastructure/Messenger.Infrastructure.csproj" />
+  <Project Path="Backend/Messenger.API/Messenger.API.csproj" />
+  <Project Path="Backend/Messenger.Application/Messenger.Application.csproj" />
+  <Project Path="Backend/Messenger.Domain/Messenger.Domain.csproj" />
+  <Project Path="Backend/Messenger.Infrastructure/Messenger.Infrastructure.csproj" />
 </Solution>
