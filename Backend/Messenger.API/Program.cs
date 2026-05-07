@@ -19,12 +19,37 @@ services.AddDbContext<MessengerDbContext>(options =>
         )
     );
 
+services.AddCors(options => 
+{ 
+    options.AddPolicy("DevelopmentCorsPolicy", corsPolicyBuilder => 
+    { 
+        corsPolicyBuilder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+    options.AddPolicy("ProductionCorsPolicy", corsPolicyBuilder =>
+    {
+        corsPolicyBuilder
+            .WithOrigins("http://localhost:5000")
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.UseSwagger();
+    app.UseSwaggerUI();
+    app.UseCors("DevelopmentCorsPolicy");
+}
+
+if (app.Environment.IsProduction())
+{
+    app.UseCors("ProductionCorsPolicy");
 }
 
 app.UseHttpsRedirection();

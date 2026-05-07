@@ -1,5 +1,8 @@
 <Solution>
   <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="compose.override.example.yaml" />
+    <File Path="compose.production.yaml" />
     <File Path="compose.yaml" />
   </Folder>
   <Project Path="Backend/Messenger.API/Messenger.API.csproj" />

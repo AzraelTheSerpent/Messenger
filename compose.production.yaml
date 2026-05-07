@@ -1,0 +1,4 @@
+services:
+  messenger.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production

@@ -10,7 +10,7 @@ public class MessengerContextFactory : IDesignTimeDbContextFactory<MessengerDbCo
     {
         var configuration = new ConfigurationBuilder()
             .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Messenger.API"))
-            .AddJsonFile("appsettings.json")
+            .AddJsonFile("appsettings.Development.json")
             .Build();
         var optionsBuilder = new DbContextOptionsBuilder<MessengerDbContext>();
         optionsBuilder.UseNpgsql(configuration.GetConnectionString("Migration"));
