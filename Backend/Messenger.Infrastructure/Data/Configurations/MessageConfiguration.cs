@@ -9,9 +9,16 @@ public class MessageConfiguration : IEntityTypeConfiguration<Message>
     public void Configure(EntityTypeBuilder<Message> builder)
     {
         builder.ToTable("Messages");
-
+        
         builder.HasKey(m => m.Id);
 
+        builder.Property(m => m.Id)
+            .ValueGeneratedOnAdd();
+        
+        builder.Navigation(m => m.Attachments)
+            .HasField("_attachments")
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
+        
         builder.Property(m => m.Text)
             .HasMaxLength(3000);
 

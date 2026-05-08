@@ -9,9 +9,11 @@ public class MessageAttachmentConfiguration : IEntityTypeConfiguration<MessageAt
     public void Configure(EntityTypeBuilder<MessageAttachment> builder)
     {
         builder.ToTable("MessageAttachments");
-
+        
         builder.HasKey(ma => ma.Id);
-
+        builder.Property(ma => ma.Id)
+            .ValueGeneratedOnAdd();
+        
         builder.Property(ma => ma.FileUrl)
             .IsRequired()
             .HasMaxLength(255);

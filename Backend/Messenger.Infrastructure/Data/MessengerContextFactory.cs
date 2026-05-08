@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Messenger.Infrastructure.Data;
 
+// ReSharper disable once UnusedType.Global
 public class MessengerContextFactory : IDesignTimeDbContextFactory<MessengerDbContext>
 {
     public MessengerDbContext CreateDbContext(string[] args)

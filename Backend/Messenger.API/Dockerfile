@@ -8,6 +8,9 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Messenger.API/Messenger.API.csproj", "Messenger.API/"]
+COPY ["Messenger.Application/Messenger.Application.csproj", "Messenger.Application/"]
+COPY ["Messenger.Domain/Messenger.Domain.csproj", "Messenger.Domain/"]
+COPY ["Messenger.Infrastructure/Messenger.Infrastructure.csproj", "Messenger.Infrastructure/"]
 RUN dotnet restore "Messenger.API/Messenger.API.csproj"
 COPY . .
 WORKDIR "/src/Messenger.API"
