@@ -1,4 +1,6 @@
+using Messenger.Application.Interfaces.Repositories;
 using Messenger.Infrastructure.Data;
+using Messenger.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,6 +38,9 @@ services.AddCors(options =>
             .AllowAnyHeader();
     });
 });
+
+services.AddScoped<IUnitOfWork, UnitOfWork>();
+services.AddScoped(typeof(IRepository<,>), typeof(Repository<,>));
 
 var app = builder.Build();
 
